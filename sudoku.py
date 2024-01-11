@@ -48,7 +48,7 @@ def getInput():
     if re.match(r'\d,\d', inputChar):
         position = [int(n) - 1 for n in inputChar.split(',')] 
         if position[0] > 8 or position[1] > 8 or position[0] < 0 or position[1] < 0: # check if position is valid
-            return move, num, None
+            return move, num, None, solve, check
 
     if inputChar == 'w':
         move = 'Up'

@@ -1,6 +1,6 @@
 import sys
 
-def displayGrid(grid, x=-1, y=-1, hideNumbers=False, default=False):
+def displayGrid(grid, x=-1, y=-1, hideNumbers=False, default=False, message=""):
     sys.stdout.write("\033[H") # move cursor to top left
     for i in range(0, 9):
         for j in range(0, 9):
@@ -14,5 +14,10 @@ def displayGrid(grid, x=-1, y=-1, hideNumbers=False, default=False):
             else:
                 sys.stdout.write(char + " ")
         sys.stdout.write("\n")
+    sys.stdout.write(" " * 90)# clear line
+    sys.stdout.write("\033[L") # move cursor to left
+    sys.stdout.write(message)
+    sys.stdout.write("\n")
+
   
     sys.stdout.flush()
